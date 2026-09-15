@@ -152,9 +152,8 @@ word = st.text_input(
 # -------------------------
 # Submit
 # -------------------------
-
-if st.button("Submit", use_container_width=True):
-
+def submit_word():
+    word = st.session_state.word_input
     valid, message = game.validate_word(word)
 
     if not valid:
@@ -175,9 +174,15 @@ if st.button("Submit", use_container_width=True):
             f"{word} +{points} points!"
         )
 
-        # Clear input
-        st.session_state.word_input = ""
+    # Clear input
+    st.session_state.word_input = ""
 
+
+
+st.button(
+    "Submit",
+    on_click=submit_word
+)
 
 # -------------------------
 # Found words
