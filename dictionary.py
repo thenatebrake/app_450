@@ -3,7 +3,7 @@ from pathlib import Path
 
 class Dictionary:
 
-    def __init__(self, filename="data/english3.txt"):
+    def __init__(self, filename="english3.txt"):
         self.words = set()
 
         path = Path(filename)
